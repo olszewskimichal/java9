@@ -8,6 +8,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Another small detail: If we want to, we can now more easily move from eager operations on Optional to lazy operations on Stream.
+ *
+ * public List<Order> findOrdersForCustomer(String customerId) { return findCustomer(customerId) // 'List<Order> getOrders(Customer)' is expensive; // this is 'Optional::map', which is eager
+ * .map(this::getOrders) .orElse(new ArrayList<>()); }
+ *
+ * public Stream<Order> findOrdersForCustomer(String customerId) { return findCustomer(customerId) .stream() // this is 'Stream::map', which is lazy .map(this::getOrders) .flatMap(List::stream); }
+ */
 public class streamOptionalsTest {
 
   @Test
