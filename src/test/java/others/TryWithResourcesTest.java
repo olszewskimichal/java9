@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
-public class TryWithResourcesTest {
+class TryWithResourcesTest {
 
   @Test
   void shouldCloseReader() throws IOException {
@@ -20,4 +20,28 @@ public class TryWithResourcesTest {
     assertThat(ioException.getMessage()).contains("Stream closed");
   }
 
+  @Test
+  void shouldCloseResource() {
+    Resource resource = new Resource();
+    try (resource) {
+      resource.operate();
+    }
+  }
+
+
+}
+
+class Resource implements AutoCloseable {
+
+  public Resource() {
+    System.out.println("Created");
+  }
+
+  public void operate() {
+    System.out.println("operate");
+  }
+
+  public void close() {
+    System.out.println("clean up");
+  }
 }
