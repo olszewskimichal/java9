@@ -69,3 +69,40 @@ np.
 ```
 Map<String, String> stringMap = Map.of("hello", "world");
 ```
+### Optional API ###
+* ifPresentOrElse
+```
+void ifPresentOrElse(Consumer<? super T> action,Runnable emptyAction)
+```
+* Or
+```
+Optional<T> or​(Supplier<? extends Optional<? extends T>> supplier)
+```
+* Optional.stream()
+```
+Stream<T>	stream()	
+If a value is present, returns a sequential Stream containing only that value, otherwise returns an empty Stream.
+```
+### Process API ###
+* ProcessHandle 
+* ProcessBuilder
+* Runtime.version()
+### Concurrent API ###
+* CompletableFuture copy
+* CompletableFuture completeOnTimeout
+* CompletableFuture orTimeout
+### Date API ###
+* datesUntil
+### Objects API ###
+* checkIndex
+* requireNonNullElseGet
+np.
+```
+List<String> aList = Objects.requireNonNullElseGet(null, List::of);
+    assertThat(aList).isNotEmpty();
+```
+* requireNonNullElse
+### Other ###
+* StackWalker
+* Private method in Interface
+* TryWithResources
