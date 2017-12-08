@@ -1,4 +1,4 @@
-# java9
+# Zmiany w JAVIE 9
 Repozytorium przedstawiające kilka zmian które zaszły w Javie 9
 Dla każdej ze zmian zostały dodane testy przedstawiające dzialanie danej funkcjonalności
 
