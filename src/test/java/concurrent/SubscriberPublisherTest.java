@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class SubscriberPublisherTest {
 
   @Test
-  void whenSubscribeToIt_thenShouldConsumeAll() {
+  void whenSubscribeToIt_thenShouldConsumeAll() throws InterruptedException {
 
     // given
     SubmissionPublisher<String> publisher = new SubmissionPublisher<>();
@@ -25,7 +25,8 @@ class SubscriberPublisherTest {
     publisher.close();
 
     // then
-    assertTimeout(Duration.ofSeconds(1), () -> assertThat(subscriber.consumedElements).containsExactlyElementsOf(items));
+    Thread.sleep(1000);
+    assertThat(subscriber.consumedElements).containsExactlyElementsOf(items);
   }
 
   @Test

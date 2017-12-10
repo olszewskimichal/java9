@@ -14,7 +14,7 @@ class RequireNonNullElseGetTest {
   @Test
   void givenObject_whenRequireNonNullElseGet_thenObject() {
     List<String> aList = Objects.requireNonNullElseGet(null, List::of);
-    assertThat(aList).isNotEmpty();
+    assertThat(aList).isNotNull().isEmpty();
   }
 
 }
