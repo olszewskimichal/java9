@@ -1,5 +1,6 @@
 package collectionFactory;
 
+import static java.util.Map.entry;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -27,5 +28,11 @@ class MapFactory {
     Map<String, String> stringMap = Map.of("hello", "world");
 
     assertThrows(UnsupportedOperationException.class, () -> stringMap.put("1", "2"));
+  }
+
+  @Test
+  void shouldCreateMapWithEntries(){
+    Map<String, Integer> entriesMap = Map.ofEntries(entry("aaaa", 1), entry("bbbb", 2));
+    assertThat(entriesMap).isNotEmpty().hasSize(2);
   }
 }
