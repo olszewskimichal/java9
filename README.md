@@ -106,3 +106,5 @@ List<String> aList = Objects.requireNonNullElseGet(null, List::of);
 * StackWalker
 * Private method in Interface
 * TryWithResources
+* InputStream.transferTo(OutputStream)
+* Podstawy HTTP/2
