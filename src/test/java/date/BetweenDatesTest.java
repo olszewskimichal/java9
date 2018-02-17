@@ -2,7 +2,10 @@ package date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,6 +34,18 @@ class BetweenDatesTest {
     LocalDate to = from.plusDays(7);
     List<LocalDate> collect = from.datesUntil(to).collect(Collectors.toList());
     assertThat(collect).isNotNull().isNotEmpty().hasSize(7);
+  }
+
+  @Test
+  void shouldConvertInstantToLocalDate() {
+    LocalDate localDate = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
+    assertThat(localDate).isEqualTo(LocalDate.now());
+  }
+
+  @Test
+  void shouldConvertInstantToLocalDateTime() {
+    LocalDateTime localDate = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
+    assertThat(localDate).isNotNull().isBeforeOrEqualTo(LocalDateTime.now());
   }
 
 }
