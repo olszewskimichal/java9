@@ -1,3 +1,4 @@
+/*
 package http;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,9 +13,11 @@ import jdk.incubator.http.HttpRequest;
 import jdk.incubator.http.HttpResponse;
 import org.junit.jupiter.api.Test;
 
+*/
 /***
  * https://howtoprogram.xyz/2017/10/19/java-9-http-2-client-api-example/
- */
+ *//*
+
 class HttpClientTest {
 
   @Test
@@ -47,3 +50,4 @@ class HttpClientTest {
 
   }
 }
+*/
