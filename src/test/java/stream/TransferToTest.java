@@ -1,13 +1,11 @@
 package stream;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 class TransferToTest {
@@ -23,7 +21,7 @@ class TransferToTest {
       long count = bis.transferTo(bos);
 
       byte[] outBytes = bos.toByteArray();
-      assertTrue(Arrays.equals(inBytes, outBytes));
+      assertArrayEquals(inBytes, outBytes);
       assertTrue(count > 0);
     }
   }
