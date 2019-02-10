@@ -24,4 +24,5 @@ class CheckIndexTest {
     int length = 5;
     assertThrows(IndexOutOfBoundsException.class, () -> Objects.checkIndex(5, length));
   }
+
 }
